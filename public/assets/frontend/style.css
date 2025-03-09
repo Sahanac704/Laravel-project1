@@ -1,0 +1,162 @@
+.nav-link dropdown-toggle{
+    position: relative;
+    margin-right: 0;
+}
+
+
+.free{
+    margin-right: 380px;
+}
+
+.icon{
+    font-size: 35px;
+    margin-right: 80px;
+    word-spacing: 20px;
+}
+
+.dropp{
+    margin-right: 40px;
+}
+
+.drop{
+    margin-right: 20px;
+}
+
+.border{
+    color: gray;
+}
+
+.badge{
+    background-color: lightgray;
+    block-size: auto;
+}
+
+.round{
+    color: blue;
+}
+
+.heading1{
+    font-size: 60px;
+}
+
+.fashion{
+    color: blue;
+    text-decoration: underline;
+}
+
+.paragraph1{
+    font-size: 20px;
+}
+
+.image1{
+    height: 500px;
+    width: 500px;
+}
+
+.bi{
+    font-size: 35px;
+}
+
+.bi1{
+    font-size: 20px;
+}
+
+.bi2{
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.hover1:hover{
+    position: relative;
+    margin-top: -20px;
+    transition: margin-top 0.3s ease-in-out;
+}
+
+.footer1{
+    margin-left: 20px;
+}
+
+.sbtn{
+    background-color: lightgray;
+}
+.fbi:hover{
+    transform: rotate(-360deg);
+    display: inline-block;
+    color: white;
+}
+.fbi{
+    transition:0.3s ease-in-out;
+    color: black;
+}
+.form-control1{
+    border: 1px solid blue;
+    padding: 10px;
+}
+
+.subscribe{
+    align-items: center;
+    justify-content: center;
+    margin-left: 500px;
+}
+
+.btn{
+    border-radius: 30px;
+}
+
+.card{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slideimage:hover{
+    position: relative;
+    margin-right: -50px;
+    transition: margin-right 0.3s ease-in-out;
+}
+
+.new{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: blue;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.sale{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.biss{
+    font-size: 15px;
+    color: gold;
+}
+.bis{
+    font-size: 15px;
+    color: gold;
+    margin-left: 5px;
+}
+
+.overlayimg{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: lightgray;
+}
+.card:hover .overlayimg{
+    opacity: 1;
+  }
