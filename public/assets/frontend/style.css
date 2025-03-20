@@ -3,7 +3,6 @@
     margin-right: 0;
 }
 
-
 .free{
     margin-right: 380px;
 }
@@ -58,7 +57,7 @@
 }
 
 .bi1{
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .bi2{
@@ -160,3 +159,33 @@
 .card:hover .overlayimg{
     opacity: 1;
   }
+
+.bi3{
+    font-size: 30px;
+}
+.abbtn{
+    background-color: lightblue;
+    border-color: lightblue;
+}
+
+.imageplay{
+    height: 600px;
+    width: 1250px;
+    border-radius: 50px;
+}
+
+.dropdown-menu .dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-menu .dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-left: 0.1rem;
+    display: none;
+    position: absolute;
+}
+
+.dropdown-menu .dropdown-submenu:hover .dropdown-menu {
+    display: block;
+}

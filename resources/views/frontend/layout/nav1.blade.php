@@ -1,5 +1,5 @@
  {{-- navbar1 --}}
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <nav class="navbar navbar-expand-lg navbar-light bg-light ">
     <div class="container-fluid">
 
       <div class="collapse navbar-collapse" id="navbarNavDropdown">

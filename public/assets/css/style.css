@@ -13,6 +13,12 @@
     z-index: 99;
 }
 
+.profilecard{
+    width: 500px;
+    margin-left: 300px;
+    background-color: rgb(232, 244, 251);
+}
+
 
 /*** Spinner ***/
 #spinner {
@@ -42,6 +48,8 @@
     width: 38px;
     height: 38px;
 }
+
+
 
 .btn-sm-square {
     width: 32px;
