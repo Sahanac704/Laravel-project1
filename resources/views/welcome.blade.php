@@ -10,10 +10,10 @@
             </div>
 
             <div class="heading1 mt-3">
-                <h1 class="heading1">Discover Stylish <span class="fashion">Fashion</span> For Every Season</h1>
+                <h1 class="heading1">{{ $about->title1 }} <span class="fashion">Fashion</span>{{$about->title2}}</h1>
             </div>
 
-            <p class="paragraph1 mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum accusantium at alias illum itaque vero eaque consequuntur molestiae blanditiis similique saepe eveniet soluta ab illo commodi laborum, aut, eius eligendi.</p>
+            <div class="paragraph1 mt-4">{!! $about->description !!}</div>
 
             <div class="button1 mt-4 ">
                 <button type="button" class="btn btn-primary px-3">Shop Now <ion-icon name="arrow-forward-outline"></ion-icon></button>
@@ -61,9 +61,9 @@
 
         <div class="col-md-3">
             <div class="hover1">
-                <i class="bi bi-truck"></i>
-                <h3>Free Shipping</h3>
-                <p> Assumenda molestiae reprehenderit ducimus, dolore pariatur nesciunt qui accusantium?</p>
+                <i class="{{ $features->icon }}"></i>
+                <h3>{{$features->title}}</h3>
+                <p> {!! $features->description !!}</p>
             </div>
         </div>
 

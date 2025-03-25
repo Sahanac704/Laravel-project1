@@ -28,6 +28,8 @@
     <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/43.1.0/ckeditor5.css">
 </head>
 
 <body>
@@ -98,6 +100,19 @@
 
     <!-- Template Javascript -->
     <script src="{{asset('assets/js/main.js')}}"></script>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'), {
+                ckfinder: {
+                    uploadUrl: '{{ route("upload") }}?_token={{ csrf_token() }}'
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 </body>
 
 </html>

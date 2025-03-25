@@ -17,15 +17,16 @@ return new class extends Migration
             $table->string('phone_number');
             $table->string('email');
             $table->string('address');
-            $table->string('map_url')->nullable();
-            $table->string('facebook_url')->nullable();
+            $table->string('map_url');
+            $table->string('facebook_url');
             $table->string('logo');
             $table->string('thumbnail');
-            $table->string('instagram_url')->nullable();
-            $table->string('twitter_url')->nullable();
-            $table->string('tiktok_url')->nullable();
-            $table->string('pinterest_url')->nullable();
-            $table->string('youtube_url')->nullable();
+            $table->string('instagram_url');
+            $table->string('twitter_url');
+            $table->string('tiktok_url');
+            $table->string('pininterest_url');
+            $table->string('youtube_url');
+
 
             $table->timestamps();
         });

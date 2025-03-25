@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontendController;
-
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[FrontendController::class,'index'])->name('welcome');
+
 Route::get('about',[FrontendController::class,'about'])->name('about');
 
 Route::get('contact',[FrontendController::class,'contact'])->name('contact');
@@ -33,11 +32,6 @@ Route::get('cart',[FrontendController::class,'cart'])->name('cart');
 
 Route::get('checkout',[FrontendController::class,'checkout'])->name('checkout');
 
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+Route::post('upload',[UploadController::class,'store'])->name('upload');
 
 require __DIR__.'/auth.php';
