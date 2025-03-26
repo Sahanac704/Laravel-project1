@@ -7,9 +7,6 @@
 @csrf
 @method('PUT')
 
-    <label for="id">ID:</label>
-    <input type="numeric" id="id" name="id" value="{{old('id',$category->id) }}">
-
     <label for="title">Title:</label>
     <input type="text" id="title" name="title" value="{{old('title',$category->title) }}">
 

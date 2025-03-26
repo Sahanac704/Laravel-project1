@@ -13,7 +13,7 @@
             <th>ID</th>
             <th>Title</th>
             <th>Slug</th>
-            <th>Description</th>
+            <th>Category</th>
             <th>Action</th>
         </tr>
 
@@ -23,7 +23,7 @@
             <td>{{$category->id}}</td>
             <td>{{$category->title}}</td>
             <td>{{$category->slug}}</td>
-            <td>{{$category->description}}</td>
+            <td>{{$category->title}}</td>
 
             <td>
                 <a href="{{ route('admin.categories.edit',$category) }}"><i class="bi bi-pen mx-2"></i></a>

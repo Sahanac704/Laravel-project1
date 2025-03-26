@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Category;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateCategoryRequest extends FormRequest
 {
@@ -24,6 +25,7 @@ class UpdateCategoryRequest extends FormRequest
         return [
             'title' => ['required','string','max:255'],
             'slug' => ['required', 'string', 'max:255'],
+            'category_id' => ['nullable', Rule::exists('categories','id')->withoutTrashed()],
             'description' => ['required','max:255'],
         ];
     }
