@@ -16,8 +16,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all(); // Fetch all features
-        return view('admin.categories.index', compact('categories'));
+        $categories = Category::whereNotNull('category_id')->get();
+        return view('admin.categories.index',compact('categories'));
     }
 
     /**
@@ -52,7 +52,8 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('admin.categories.edit',compact('category'));
+        $categories = Category::with('categories')->where('category_id',NULL)->get(); // Fetch all categories
+        return view('admin.categories.edit',compact('category','categories'));
     }
 
     /**

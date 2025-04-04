@@ -1,20 +1,14 @@
 <?php
 
+use App\Http\Controllers\Customer\CustomerAuthController;
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\UploadController;
+use Illuminate\Contracts\Routing\UrlRoutable;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+
 
 Route::get('/',[FrontendController::class,'index'])->name('welcome');
 
@@ -33,5 +27,17 @@ Route::get('cart',[FrontendController::class,'cart'])->name('cart');
 Route::get('checkout',[FrontendController::class,'checkout'])->name('checkout');
 
 Route::post('upload',[UploadController::class,'store'])->name('upload');
+
+Route::prefix('file')->as('file.')->controller(FileController::class)->group(function () {
+    Route::delete('{file}/delete','destroy')->name('destroy');
+});
+
+//Customer auth
+
+Route::get('customer/register',[CustomerAuthController::class,'registerPage'])->name('customer.register');
+Route::post('customer/register',[CustomerAuthController::class,'register'])->name('customer.register');
+
+Route::get('customer/loginPage',[CustomerAuthController::class,'loginPage'])->name('customer.loginPage');
+Route::post('customer/login',[CustomerAuthController::class,'login'])->name('customer.login');
 
 require __DIR__.'/auth.php';

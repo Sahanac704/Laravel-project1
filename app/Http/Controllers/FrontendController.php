@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Category;
 use App\Models\Feature;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -14,7 +15,8 @@ class FrontendController extends Controller
         $about = About::first();
         $features = Feature::first();
         $categories = Category::first();
-        return view('welcome',compact('about','features','categories'));
+        $product = Product::first();
+        return view('welcome',compact('about','features','categories','product'));
     }
 
     public function about()

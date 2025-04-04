@@ -11,18 +11,16 @@
     <table class="table table-striped table-hover" border=1>
         <tr>
             <th>ID</th>
-            <th>Title</th>
-            <th>Slug</th>
-            <th>Category</th>
+            <th>Category Name</th>
+            <th>Sub Category Name</th>
             <th>Action</th>
         </tr>
 
         @forelse ($categories as $category)
         <tr>
 
-            <td>{{$category->id}}</td>
-            <td>{{$category->title}}</td>
-            <td>{{$category->slug}}</td>
+            <td>{{$loop->iteration}}</td>
+            <td>{{$category->category?->title}}</td>
             <td>{{$category->title}}</td>
 
             <td>
