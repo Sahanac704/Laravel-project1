@@ -329,3 +329,8 @@ button {
 button:hover {
     background-color: blue;
 }
+
+.delete{
+    padding-left: 1px;
+}
+

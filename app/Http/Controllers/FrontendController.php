@@ -13,10 +13,11 @@ class FrontendController extends Controller
     public function index()
     {
         $about = About::first();
-        $features = Feature::first();
+        $features=Feature::limit(4)->get();
         $categories = Category::first();
-        $product = Product::first();
-        return view('welcome',compact('about','features','categories','product'));
+        $products = Product::with('category')->get();
+        return view('welcome',compact('about', 'features','products','categories'));
+
     }
 
     public function about()
@@ -46,6 +47,11 @@ class FrontendController extends Controller
     public function checkout()
     {
         return view('frontend.checkout');
+    }
+    public function productDetail(Product $product)
+    {
+        $product->load('files');
+        return view('frontend.product',compact('product'));
     }
 
 

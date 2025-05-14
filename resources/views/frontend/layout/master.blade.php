@@ -11,13 +11,21 @@
 </head>
 <body>
 {{-- navbar1 --}}
+
    @include('frontend.layout.nav1')
 
+
 {{-- navbar2 --}}
+@if (Request::is('/'))
 @include('frontend.layout.nav2')
+@endif
 
 {{-- navbar3 --}}
+@if (Request::is('/'))
 @include('frontend.layout.nav3')
+@endif
+
+@include('sweetalert::alert')
 
 @yield('container')
 

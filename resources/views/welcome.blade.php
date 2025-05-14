@@ -59,97 +59,33 @@
 <div class="container-fluid bg bg-light mt-5">
     <div class="row mx-5 p-5 text-center">
 
-        <div class="col-md-3">
-            <div class="hover1">
-                <i class="{{ $features->icon }}"></i>
-                <h3>{{$features->title}}</h3>
-                <p> {!! $features->description !!}</p>
-            </div>
-        </div>
+        @foreach($features as $feature)
 
         <div class="col-md-3">
             <div class="hover1">
-                <i class="bi bi-piggy-bank"></i>
-                <h3>Money Back Guarantee</h3>
-                <p> Assumenda molestiae reprehenderit ducimus, dolore pariatur nesciunt qui accusantium?</p>
+                <i class="{{$feature->icon}}"></i>
+                <h3>{{$feature->title}}</h3>
+                <p> {!! $feature->description !!}</p>
             </div>
         </div>
+        @endforeach
 
-        <div class="col-md-3">
-            <div class="hover1">
-                <i class="bi bi-percent"></i>
-                <h3>Discount Offers</h3>
-                <p> Assumenda molestiae reprehenderit ducimus, dolore pariatur nesciunt qui accusantium?</p>
-            </div>
-        </div>
 
-        <div class="col-md-3">
-            <div class="hover1">
-                <i class="bi bi-headset"></i>
-                <h3>24/7 Support</h3>
-                <p> Assumenda molestiae reprehenderit ducimus, dolore pariatur nesciunt qui accusantium?</p>
-            </div>
-        </div>
 
     </div>
 </div>
 
 {{-- slider --}}
-<div class="container-fluid mt-5 bg bg-white p-5">
-    <div class="slider">
-        <div class="row">
-            <div class="col-md-2">
-                <div class="card text-center" style="width: 200px;">
-                    <img src="assets/images/bag.webp" class="card-img-top slideimage" alt="...">
-                    <div class="card-body">
-                        <h6>Bag</h6>
-                        <p class="card-text">12 Products</p>
-                    </div>
-                </div>
+<div class="carousel mt-5">
+    <div class="carousel-container">
+        @foreach ($products as $product)
+            <div class="card">
+              <a href="{{ route('productDetail',$product) }}">
+                <img src="{{ $product->thumbnail }}"></a>
+                <p>{{ $product->name }}</p>
             </div>
-            <div class="col-md-2">
-                <div class="card text-center" style="width: 200px;">
-                    <img src="assets/images/hoodie.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6>Hoodie</h6>
-                        <p class="card-text">10 Products</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card text-center" style="width: 200px;">
-                    <img src="assets/images/leatherbag.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6>Leather Bag</h6>
-                        <p class="card-text">5 Products</p>
-                    </div>
-                </div>
-            </div><div class="col-md-2">
-                <div class="card text-center" style="width: 200px;">
-                    <img src="assets/images/jacket.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6>Jacket</h6>
-                        <p class="card-text">8 Products</p>
-                    </div>
-                </div>
-            </div><div class="col-md-2">
-                <div class="card text-center" style="width: 200px;">
-                    <img src="assets/images/shoes.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6>Shoes</h6>
-                        <p class="card-text">15 Products</p>
-                    </div>
-                </div>
-            </div><div class="col-md-2">
-                <div class="card text-center" style="width: 200px;">
-                    <img src="assets/images/glasses.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6>Glasses</h6>
-                        <p class="card-text">12 Products</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endforeach
+
     </div>
 </div>
 

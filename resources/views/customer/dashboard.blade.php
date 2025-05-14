@@ -10,8 +10,8 @@
 <div class="container-fluid d-flex">
     <aside class="sidebar p-3" style="width: 250px; background-color: #f8f9fa;">
         <div class="profile text-center mb-4">
-            <img src="profile.jpg" alt="Profile Picture" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px;">
-            <h3>John Doe</h3>
+            <img src="{{ Auth::guard('customer')->user()->image }}" alt="Profile Picture" class="img-fluid rounded-circle mb-2" style="width: 100px; height: 100px;">
+            <h3>{{ Auth::guard('customer')->user()->name}}</h3>
         </div>
         <nav>
             <ul class="list-unstyled">
@@ -26,9 +26,9 @@
 
     <main class="content p-5" style="flex-grow: 1;">
         <section class="profile-summary mb-5">
-            <h3>Profile Summary</h3>
-            <p>Email: johndoe@example.com</p>
-            <p>Phone: +123 456 7890</p>
+            <h3>{{Auth::guard('customer')->user()->name}}</h3>
+            <p>{{Auth::guard('customer')->user()->email}}</p>
+            <p>{{Auth::guard('customer')->user()->number}}</p>
             <button class="btn btn-primary">Edit Profile</button>
         </section>
 

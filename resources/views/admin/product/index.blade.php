@@ -16,6 +16,7 @@
             <th>Thumbnail</th>
             <th>Price</th>
             <th>Discount</th>
+            <th>Quantity</th>
             <th>Category</th>
             <th>Action</th>
         </tr>
@@ -28,16 +29,17 @@
             <td><img src="{{ $product->thumbnail }}" alt="productimage" height="50px;" width="50px;"></td>
             <td>{{$product->price}}</td>
             <td>{{$product->discount}}</td>
+            <td>{{$product->total_quantity}}</td>
             <td>{{$product->category->title}}</td>
 
             <td>
-                <a href="{{ route('admin.product.edit',$product) }}"><i class="bi bi-pen mx-2"></i></a>
-                <a href="{{ route('admin.product.destroy',$product) }}"  onclick="return confirm('Are you sure you want to delete?')"><i class="bi bi-trash mx-2"></i></a>
-                {{-- <form action="{{ route('admin.product.destroy', $product) }}" method="POST">
+                <a href="{{ route('admin.product.edit',$product) }}" class="btn btn-warning btn-sm">Edit</a>
+
+                <form action="{{ route('admin.product.destroy', $product) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
-                </form> --}}
+                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
+                </form>
             </td>
         </tr>
         @empty

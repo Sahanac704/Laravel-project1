@@ -29,6 +29,10 @@
             <label for="price">Price:</label>
             <input type="numeric" id="price" name="price"  value="{{old('price') }}">
 
+            <label for="quantity">Quantity:</label>
+            <input type="numeric" id="total_quantity" name="total_quantity"  value="{{old('total_quantity') }}">
+
+
             <label for="discount">Discount:</label>
             <input type="numerict" id="discount" name="discount"  value="{{old('discount') }}">
 
@@ -73,17 +77,7 @@
                 </select>
             </div>
 
-            <div class="mb-3">
-                <label class="form-label">Quantity</label>
-                <select name="quantity" class="form-control">
-                    <option value="">Select Quantity</option>
-                    @foreach(\App\Enum\QuantityEnum::cases() as $quantity)
-                        <option value="{{ $quantity->value }}">
-                            {{ $quantity->label() }}
-                        </option>
-                    @endforeach
-                </select>
-            </div>
+
 
 
             <label for="detail">Detail:</label>

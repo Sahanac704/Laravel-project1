@@ -47,6 +47,11 @@
                 </div>
 
                 <div class="mb-3">
+                    <label class="form-label">Quantity</label>
+                    <input type="number" name="total_quantity" class="form-control" placeholder="Enter quantity" value="{{ old('total_quantity',$product->total_quantity) }}">
+                </div>
+
+                <div class="mb-3">
                     <label class="form-label">Discount (%)</label>
                     <input type="number" name="discount" class="form-control" placeholder="Enter discount percentage" value="{{ old('discount',$product->discount) }}">
                 </div>
@@ -64,6 +69,30 @@
                             {{ $subCategory->title }}
                         </option>
                         @endforeach
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Size</label>
+                    <select name="size" class="form-control">
+                        <option value="">Select Size</option>
+                        @foreach(\App\Enum\SizeEnum::cases() as $size)
+                            <option value="{{ $size->value }}">
+                                {{ $size->label() }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Color</label>
+                    <select name="color" class="form-control">
+                        <option value="">Select Color</option>
+                        @foreach(\App\Enum\ColorEnum::cases() as $color)
+                            <option value="{{ $color->value }}">
+                                {{ $color->label() }}
+                            </option>
                         @endforeach
                     </select>
                 </div>

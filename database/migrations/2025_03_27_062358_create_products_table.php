@@ -22,7 +22,8 @@ return new class extends Migration
             $table->string('category_id');
             $table->string('size');
             $table->string('color');
-            $table->string('quantity');
+            $table->string('total_quantity');
+            $table->string('purchased_quantity')->nullable();
             $table->softDeletes();
 
             $table->timestamps();

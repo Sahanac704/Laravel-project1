@@ -33,7 +33,7 @@ class UpdateProductRequest extends FormRequest
 
             'size' => ['required','string','max:255'],
             'color' => ['nullable','string','max:255'],
-            'quantity' => ['nullable','string'],
+            'total_quantity' => ['required','numeric'],
 
         ];
     }

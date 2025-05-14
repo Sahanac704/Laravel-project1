@@ -4,6 +4,7 @@ use App\Http\Controllers\Customer\CustomerAuthController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\SaleController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Contracts\Routing\UrlRoutable;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,10 @@ Route::get('home',[FrontendController::class,'home'])->name('home');
 Route::get('category',[FrontendController::class,'category'])->name('category');
 
 Route::get('product',[FrontendController::class,'product'])->name('product');
+
+Route::get('productDetail/{product:name}', [FrontendController::class, 'productDetail'])->name('productDetail');
+
+Route::post('sale/{product:name}', [SaleController::class, 'sale'])->name('sale');
 
 Route::get('cart',[FrontendController::class,'cart'])->name('cart');
 

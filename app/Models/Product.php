@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Enum\ColorEnum;
+use App\Enum\SizeEnum;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -22,10 +24,18 @@ class Product extends Model
         'price',
         'discount',
         'category_id',
+        'customer_id',
         'size',
         'color',
-        'quantity',
+        'total_quantity',
+        'purchased_quantity',
     ];
+
+    protected $casts =[
+        'size' => SizeEnum::class,
+        'color' => ColorEnum::class,
+    ];
+
 
     public function thumbnail():Attribute
     {
@@ -39,6 +49,11 @@ class Product extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class,'category_id');
+    }
+
+    public function customer(): BelongsTo
+    {
+        return $this->belongsTo(Category::class,'customer_id');
     }
 
     public function files():MorphMany
